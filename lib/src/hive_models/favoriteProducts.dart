@@ -7,9 +7,6 @@ class FavoriteProducts {
   @HiveField(0)
   String id;
 
-  // @HiveField(1)
-  // String image;
-
   @HiveField(1)
   int offer;
 
@@ -24,7 +21,6 @@ class FavoriteProducts {
 
   FavoriteProducts(
       {required this.id,
-      // required this.image,
       required this.offer,
       required this.title,
       required this.price,

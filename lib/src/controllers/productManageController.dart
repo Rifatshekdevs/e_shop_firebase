@@ -10,7 +10,6 @@ class ProductManageConrtroller extends GetxController {
     } else {
       final data = FavoriteProducts(
         id: product['id'],
-        // image: product['image'],
         offer: product['offer'],
         price: product['price'],
         rating: product['rating'],

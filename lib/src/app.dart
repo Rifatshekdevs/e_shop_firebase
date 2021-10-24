@@ -1,5 +1,5 @@
 import 'package:e_shopper/src/config/appTheme.dart';
-import 'package:e_shopper/src/pages/homePage.dart';
+import 'package:e_shopper/src/pages/splashPage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 
@@ -8,8 +8,9 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: AppTheme.apaTheme,
-      home: HomePage(),
+      smartManagement: SmartManagement.onlyBuilder,
+      theme: AppTheme.theme,
+      home: SplashPage(),
     );
   }
 }

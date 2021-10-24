@@ -5,20 +5,16 @@ import 'package:get/get.dart';
 
 class CartPage extends StatelessWidget {
   final _ = Get.put(Controllerservice(), permanent: true);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
       body: Obx(
-        () => ListView(
-          physics: BouncingScrollPhysics(),
-          children: [
-            Padding(
-              padding: EdgeInsets.all(12),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
+        () => _.cartC.carts.isEmpty
+            ? Center(
+                child: KText(text: 'No carts'),
+              )
+            : ListView(
                 children: [
                   ListView.builder(
                     shrinkWrap: true,
@@ -26,17 +22,39 @@ class CartPage extends StatelessWidget {
                     itemCount: _.cartC.carts.length,
                     itemBuilder: (BuildContext context, int index) {
                       final item = _.cartC.carts[index];
-                      return ListTile(
-                        title: KText(text: item.title),
-                        leading: CircleAvatar(),
+                      return Container(
+                        height: 80,
+                        width: Get.width,
+                        decoration: BoxDecoration(
+                            color: Colors.white70,
+                            borderRadius: BorderRadius.circular(25)),
+                        child: ListTile(
+                          title: KText(
+                            text: item.title,
+                            fontFamily: 'Cera Bold',
+                            fontSize: 15,
+                          ),
+                          subtitle: KText(
+                            text: '\$${item.price}',
+                            fontFamily: 'Cera Bold',
+                            fontSize: 24,
+                          ),
+                          leading: CircleAvatar(),
+                          trailing: IconButton(
+                            onPressed: () {
+                              _.cartC.deleteCarts(id: item.id);
+                            },
+                            icon: Icon(
+                              Icons.delete_outline,
+                              color: Colors.red,
+                            ),
+                          ),
+                        ),
                       );
                     },
                   ),
                 ],
               ),
-            )
-          ],
-        ),
       ),
     );
   }

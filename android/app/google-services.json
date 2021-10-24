@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "148708448187",
+    "project_id": "ecommerce-app-27df5",
+    "storage_bucket": "ecommerce-app-27df5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:148708448187:android:3e25715b4d887deb5b169e",
+        "android_client_info": {
+          "package_name": "com.sheikhrifat.e_shopper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "148708448187-66057uvicp36eg1cgn21ando6c69jt8c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvgZGEe-gBKLSZ6i4u3aMNvw7ZI-OnCKE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "148708448187-66057uvicp36eg1cgn21ando6c69jt8c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

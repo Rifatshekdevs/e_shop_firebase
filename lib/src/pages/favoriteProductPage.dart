@@ -1,4 +1,4 @@
-import 'package:e_shopper/src/controllers/productController.dart';
+import 'package:e_shopper/src/controllers/productManageController.dart';
 import 'package:e_shopper/src/widgets/Ktext.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +8,7 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 class FavoriteProductsPage extends StatelessWidget {
-  final productManageC = Get.put(ProductController(), permanent: true);
+  final productManageC = Get.put(ProductManageConrtroller(), permanent: true);
 
   @override
   Widget build(BuildContext context) {

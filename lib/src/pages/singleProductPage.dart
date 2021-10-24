@@ -10,10 +10,13 @@ import 'package:hexcolor/hexcolor.dart';
 
 class SingleProductPage extends StatelessWidget {
   final _ = Get.put(Controllerservice(), permanent: true);
-  final item;
+
+  final Map<String, dynamic> item;
+  final String id;
 
   SingleProductPage({
     required this.item,
+    required this.id,
   });
 
   @override
@@ -24,7 +27,7 @@ class SingleProductPage extends StatelessWidget {
         backgroundColor: Colors.blue,
         child: Icon(EvaIcons.shoppingCart),
         onPressed: () {
-          _.cartC.addToCart(item: item);
+          _.cartC.addToCart(item: item, id: id);
         },
       ),
       appBar: AppBar(
@@ -49,17 +52,17 @@ class SingleProductPage extends StatelessWidget {
                 ),
               ),
             ),
-            Positioned(
-              right: 0,
-              child: Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Image.asset(
-                  '${item['imageProduct']}',
-                  width: 300,
-                  height: 300,
-                ),
-              ),
-            ),
+            // Positioned(
+            //   right: 0,
+            //   child: Padding(
+            //     padding: EdgeInsets.all(8.0),
+            //     child: Image.asset(
+            //       '${item['imageProduct']}',
+            //       width: 300,
+            //       height: 300,
+            //     ),
+            //   ),
+            // ),
             Container(
               child: Padding(
                 padding: EdgeInsets.only(top: 270, left: 16, right: 16),
@@ -114,6 +117,7 @@ class SingleProductPage extends StatelessWidget {
                               child: KText(
                                 text: 'DETAILS',
                                 fontSize: 20,
+                                fontFamily: 'Cera Bold',
                               ),
                             ),
                             SizedBox(
@@ -136,6 +140,7 @@ class SingleProductPage extends StatelessWidget {
                       child: KText(
                         text: 'Available Color',
                         fontSize: 20,
+                        fontFamily: 'Cera Bold',
                       ),
                     ),
                     SizedBox(
@@ -215,6 +220,7 @@ class SingleProductPage extends StatelessWidget {
                     KText(
                       text: '\$${item['price']}',
                       fontSize: 22,
+                      fontFamily: 'Cera Bold',
                     ),
                   ],
                 ),
